@@ -18,7 +18,7 @@ class UpdateProviderRequest extends FormRequest
         return [
             'prv_name' => 'required|max:100',
             'prv_email' => 'required|email',
-            'prv_cnpj' => 'required|unique:providers,prv_cnpj,'.$this->route('provider')->id.'',
+            'prv_cnpj' => 'required|cnpj|unique:providers,prv_cnpj,'.$this->route('provider')->id.'',
             'prv_phone' => 'required|max:15|unique:providers,prv_phone,'.$this->route('provider')->id.''
         ];
     }
