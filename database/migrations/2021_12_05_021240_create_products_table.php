@@ -19,10 +19,10 @@ class CreateProductsTable extends Migration
             $table->enum('pro_status', ['ATIVO', 'INATIVO'])->default('ATIVO');
 
             $table->unsignedBigInteger('pro_category_id');
-            $table->foreing('pro_category_id')->refernces('id')->on('categories');
+            $table->foreign('pro_category_id')->references('id')->on('categories');
 
             $table->unsignedBigInteger('pro_provider_id');
-            $table->foreing('pro_provider_id')->refernces('id')->on('providers');
+            $table->foreign('pro_provider_id')->references('id')->on('providers');
 
             $table->timestamps();
         });
